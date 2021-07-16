@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <center>
+    <h2>Delete your TODO</h2>
+    <form method = 'POST'3>
+        <h4>Are you sure you want to delete the TODO?</h4>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type='submit'>Yes</button>
+        <button><a href='../'>No</a></button>
+    </form>
+    </center>
+{% endblock content %}

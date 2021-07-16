@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <center>
+    <div class = 'header'>
+        <a href='../'>Go Back</a>
+        <hr />
+    </div>
+
+    <h2>{{ todo.title.upper }}</h2>
+    
+    <div class = "todo-detail">
+        <fieldset>
+            <p class='description'>{{ todo.description }}</p>
+        </fieldset>
+    </div>
+    <br /><hr /><br />
+    <button><a href = "/todo/{{todo.pk}}/update" class = "button">Update</a></button>
+    &nbsp;
+    <button><a href = "/todo/{{todo.pk}}/delete" class = "button">Delete</a></button>
+    </center>
+{% endblock content %}
+

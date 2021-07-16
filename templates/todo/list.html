@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <center>
+    <H2>TODO LIST</H2>
+    <hr />
+    <div class = "todo-list">
+        <ul>
+        <fieldset>
+        <legend>List</legend>
+        {% for todo in todos %}
+            <li> <a href = '/todo/{{todo.pk}}'> {{ todo.title.capitalize }} </a></li> 
+        {% endfor %}
+        </ul>
+        </fieldset>
+    </div>
+    <hr />
+    <h1> <a href = "{% url 'todo:todo-create' %}"> + </a> </h1> 
+    </center>
+{% endblock content %}

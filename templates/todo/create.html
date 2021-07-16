@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <center>
+    <div class = 'header'>
+        <a href='../'>Go Back</a>
+        <hr />
+    </div>
+    
+    <h2>Create a TODO</h2>
+    <form method = 'POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type = "submit" value = "Submit" />
+    </form>
+    </center>
+{% endblock content %}
