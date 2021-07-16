@@ -3,7 +3,7 @@ from django.views import generic
 from .models import Todo
 from .forms import TodoModelForm
 
-
+# funcion based views
 def todo_list(request):
     todos = Todo.objects.all()
     context = {
@@ -50,6 +50,7 @@ def todo_delete(request, pk):
     todo.delete()
     return redirect('/')
 
+# class based views
 class TodoListView(generic.ListView):
     template_name = 'todo/list.html'
     queryset = Todo.objects.all()
